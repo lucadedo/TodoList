@@ -1,16 +1,18 @@
-import _, { functions } from 'lodash';
-import './style.css';
-import './createTodo';
-
-const localData = localStorage.getItem('ALL') ? JSON.parse(localStorage.getItem('ALL')) : [];
-console.log(localData);
+const localData = localStorage.getItem('ALL') ? JSON.parse(localStorage.getItem('ALL')) : [{title: "Get a coke at 711", date: "2023-12-13"},{title: "wash dishes", date: "2023-12-12"}];
+localStorage.setItem("ALL", JSON.stringify(localData));
+console.log("ALL " ,localData);
 
 var flag = true;
 
 
+// let work = document.querySelector("#work");
+// work.addEventListener('click',() => { 
+//     newProj();
+// })
+
 
 // display all tasks in localstorage
-var render = (function displayAllTasks(){   
+var render = (function displayAllTasks(){  
  for (let i = 0; i < localData.length; i++) {
     displayTask(localData[i]); 
  }
@@ -174,5 +176,4 @@ function cancelButton() {
     let cancelBtn = document.querySelector("#cancel");
     cancelBtn.addEventListener('click',() =>{location.reload()})
 }
-
 
