@@ -2,4 +2,4 @@
 <p>It didn't turn out very well... I hate modules.</p>
 <p>Good practice tho.</p>
 
-![Screenshot]()
+![Screenshot](preview.png)
