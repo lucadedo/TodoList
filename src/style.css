@@ -102,17 +102,27 @@ a {
   padding-top: 30px;
   padding-bottom: 0.8em;
 }
+
+/* task form */
+#new-task-form {
+  display: flex;
+  justify-content: space-between;
+  height: 4em;
+  
+}
 /* add task input */
 
 #new-task-input {
-  flex: 1 1 0%;
+ 
 	background-color: #bbe4e9;
 	padding: 1rem;
 	border-radius: 1rem;
 	margin-right: 1rem;
 	color: var(--light);
 	font-size: 1.25rem;
-  width: 50%;
+  width: 45%;
+  
+  
 }
 /* Add Todo btn */
 #addTask {
@@ -524,6 +534,47 @@ button#cancel\ hide {
 #edit-task-form {
   display: flex;
   gap: 10px;
+  height: 5em
+}
+input#new-date-input-edit {
+  background-color: #0080ff;
+  padding: 20px;
+  margin-top: 2em;
+  transform: translate(-50%,-50%);
+  position: relative;
+  top: 0px;
+  left: 5em;
+  font-family: "Roboto Mono",monospace;
+  color: #ffffff;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  width: 9em;
 }
 
+/* input date  */
+
+input#new-date-input{
+  background-color: #0080ff;
+  padding: 20px;
+  margin-top: 2em;
+  transform: translate(-50%,-50%);
+  position: relative;
+  top: 0px;
+  left: 5em;
+  font-family: "Roboto Mono",monospace;
+  color: #ffffff;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  width: 8em;
+}
+::-webkit-calendar-picker-indicator{
+  background-color: #ffffff;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+}
 

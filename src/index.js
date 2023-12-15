@@ -104,12 +104,18 @@ function editTask(eb,i) {
     let deleteBtn = document.querySelectorAll('#delete');
     let checkboxBtn = document.querySelectorAll('#checkbox');
     
+   let taskLeftStyle = document.querySelectorAll('#task-left-side');
+    // let taskRightStyle = document.querySelector('#task-right-side');
+    taskLeftStyle[i].style.flex =  "inherit";
+    // taskRightStyle.style.flex = null;
+   
+
     eb.id += " hide";
     deleteBtn[i].id += " hide";
     checkboxBtn[i].id += " hide";
 
     let localData = JSON.parse(localStorage.getItem('ALL'));
-    console.log(localData[i].title);
+    console.log(localData[i].date);
    
     let editLocation = document.querySelectorAll('#task-left-side');
     console.log(editLocation[i]);
@@ -120,6 +126,10 @@ function editTask(eb,i) {
                                     id="new-task-input" 
                                     value="${localData[i].title}" 
                                     />
+                                    <input type="date" id="new-date-input-edit" name="trip-start"
+                                    value="${localData[i].date}"
+                                    min="2020-01-01" 
+                                    max="2025-12-31">
                                     <button id="save" style="display: none;" type="submit">save</button>
                                     <button id="cancel" style="display: none;" type="button">cancel</button>
                                 </form>`;
@@ -142,9 +152,10 @@ function saveButton(i) {
         e.preventDefault();
         // get new input data & store it to new Obj
         const newForm = e.target;
-        let newInput = newForm.querySelector("#new-task-input").value;
-        console.log(newInput);
-        const inputObj = {title: newInput, date: '2015-05-24'};
+        let newTitleInput = newForm.querySelector("#new-task-input").value;
+        let newDateInput = newForm.querySelector("#new-date-input-edit").value;
+        console.log(newDateInput);
+        const inputObj = {title: newTitleInput, date: newDateInput};
         console.log(inputObj);
     
         // create new storage obj, store the new input in it and set it back to localstorage
